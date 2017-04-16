@@ -1,0 +1,11 @@
+﻿<Window x:Class="WpfApplication2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="520"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Topmost="True">
+    <Grid>
+        <TextBlock Name ="date" HorizontalAlignment="Left" Margin="442,290,0,0" TextWrapping="Wrap" Text="{Binding Path=date}" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
