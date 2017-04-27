@@ -53,15 +53,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="test\GameObjBuilder.cs" />
     <Compile Include="test\Date.cs" />
-    <Compile Include="test\Event.cs" />
+    <Compile Include="test\entity\Authority.cs" />
+    <Compile Include="test\entity\AuthorityLeader.cs" />
+    <Compile Include="test\entity\AuthorityMemmber.cs" />
+    <Compile Include="test\entity\Family.cs" />
+    <Compile Include="test\entity\Local.cs" />
+    <Compile Include="test\entity\Office.cs" />
+    <Compile Include="test\entity\OfficeCenter.cs" />
+    <Compile Include="test\entity\OfficeLocal.cs" />
+    <Compile Include="test\Event\Event.cs" />
     <Compile Include="test\EventBox.cs" />
     <Compile Include="test\EventGenerater.cs" />
+    <Compile Include="test\Event\EventJisi.cs" />
+    <Compile Include="test\Event\EventKaohe.cs" />
+    <Compile Include="test\Event\EventPlayerDie.cs" />
+    <Compile Include="test\Event\EventTianming.cs" />
+    <Compile Include="test\Event\EventTianxiang.cs" />
+    <Compile Include="test\GameObj.cs" />
+    <Compile Include="test\GameEndException.cs" />
+    <Compile Include="test\IEventDlg.cs" />
     <Compile Include="test\MainService.cs" />
     <Compile Include="EventDialog.xaml.cs">
       <DependentUpon>EventDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="test\EventTest.cs" />
+    <Compile Include="test\entity\Role.cs" />
+    <Compile Include="test\SysTool.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

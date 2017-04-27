@@ -4,8 +4,62 @@
         Title="MainWindow" Height="350" Width="520"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Topmost="True">
+        Topmost="false">
     <Grid>
-        <TextBlock Name ="date" HorizontalAlignment="Left" Margin="442,290,0,0" TextWrapping="Wrap" Text="{Binding Path=date}" VerticalAlignment="Top"/>
+        <TextBlock Name ="date" HorizontalAlignment="Left" Margin="440,20,0,0" TextWrapping="Wrap" Text="{Binding Path=DateTime}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="TM:" VerticalAlignment="Top"/>
+        <TextBlock Name ="tianming" HorizontalAlignment="Left" Margin="40,20,0,0" TextWrapping="Wrap" Text="{Binding Path=Tianming}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="100,20,0,0" TextWrapping="Wrap" Text="CZ:" VerticalAlignment="Top"/>
+        <TextBlock Name ="caizheng" HorizontalAlignment="Left" Margin="120,20,0,0" TextWrapping="Wrap" Text="{Binding Path=Caizheng}" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="180,20,0,0" TextWrapping="Wrap" Text="WB:" VerticalAlignment="Top"/>
+        <TextBlock Name ="wubei" HorizontalAlignment="Left" Margin="200,20,0,0" TextWrapping="Wrap" Text="{Binding Path=Wubei}" VerticalAlignment="Top"/>
+        <Button Content="Exit" HorizontalAlignment="Left" Margin="421,311,0,0" VerticalAlignment="Top" Width="75" Click="ExitButton_Click"/>
+
+        <TabControl Name ="tsTest" TabStripPlacement="Top" Margin="16,39,16,36">
+            <TabItem Header="zhoujun">
+                <StackPanel>
+                    <DataGrid x:Name="zhoujunDataGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="zm" Binding="{Binding Path=LocalName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="gz" Binding="{Binding Path=OfficeName}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="xm" Binding="{Binding Path=RoleName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="status" Binding="{Binding Path=Status}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="ct">
+                <StackPanel>
+                    <TextBlock Margin="30"></TextBlock>
+                    <TextBlock>
+                    </TextBlock>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="js">
+                <StackPanel>
+                    <DataGrid x:Name="jiaoseDataGrid" AutoGenerateColumns="False" Margin="-2,0,2,0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="mingzi" Binding="{Binding Path=Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="nianling" Binding="{Binding Path=Age}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="guanzhi" Binding="{Binding Path=Office}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="mingwang" Binding="{Binding Path=Power}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="zhuangtai" Binding="{Binding Path=Status}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="jz">
+                <StackPanel>
+                    <DataGrid x:Name="jiaozhuDataGrid" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="xingshi" Binding="{Binding Path=LocalName}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="weiwang" Binding="{Binding Path=OfficeName}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="renshu" Binding="{Binding Path=RoleName}" IsReadOnly="True"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        
     </Grid>
 </Window>

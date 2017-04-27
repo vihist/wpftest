@@ -11,21 +11,28 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplication2.test;
 
 namespace WpfApplication2
 {
     /// <summary>
     /// EventDialog.xaml 的交互逻辑
     /// </summary>
-    public partial class EventDialog : Window
+    public partial class EventDialog : Window, IEventDlg
     {
-        public EventDialog(string eventDesc, List<string> optionDescList)
+        public EventDialog()
         {
             InitializeComponent();
-            this.Desc.Text = eventDesc;
-
-            this.Top = System.Windows.SystemParameters.PrimaryScreenHeight / 2 - 195;//(double)MainWindow.HeightProperty.DefaultMetadata.DefaultValue/2;
+            
+            this.Top = System.Windows.SystemParameters.PrimaryScreenHeight / 2 - 350 / 2 - System.Windows.SystemParameters.CaptionHeight - 8;//(double)MainWindow.HeightProperty.DefaultMetadata.DefaultValue/2;
             this.Left = System.Windows.SystemParameters.PrimaryScreenWidth / 2 + 520/2;
+
+
+        }
+
+        public void Initialize(string eventDesc, List<string> optionDescList)
+        {
+            this.Desc.Text = eventDesc;
 
             foreach (string optionDesc in optionDescList)
             {
@@ -38,9 +45,34 @@ namespace WpfApplication2
             }
         }
 
+        public new void Show() 
+        {
+            this.ShowDialog();
+        }
+
+        public void Exit()
+        {
+            Action closeAction = () =>
+            {
+                this.Close();
+            };
+
+            this.Dispatcher.BeginInvoke(closeAction);
+        }
+
+        public string GetSelectedOption()
+        {
+            return optionDesc;
+        }
+
         void button_Click(object sender, RoutedEventArgs e)
         {
+            Button btn = (Button)sender;
+            optionDesc = (string)btn.Content;
+
             this.Close();
         }
+
+        private string optionDesc;
     }
 }
